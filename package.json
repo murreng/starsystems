@@ -1,7 +1,7 @@
 {
   "name": "my-react-setup",
   "version": "1.0.0",
-  "description": "my react setup",
+  "description": "The Seven Deadly Sins",
   "main": "/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/murreng/default-react-app.git"
+    "url": "git+https://github.com/murreng/thesevendeadlysinsfanpage.git"
   },
   "author": "",
   "license": "ISC",
