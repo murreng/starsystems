@@ -9,10 +9,24 @@ const defaultState = handleActions(
         ...state,
         ...payload
       };
-    }
+    },
+
+    [types.GET_PRODUCT_TYPE](state, { payload }) {
+      return {
+        ...state
+      };
+    },
+
+    [types.SET_PRODUCT_TYPE](state, { payload }) {
+      return {
+        ...state,
+        currentProductType:payload
+      };
+    },
+
   },
   {
-    item: null
+    currentProductType: {}
   }
 );
 
