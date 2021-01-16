@@ -21,14 +21,20 @@ useEffect(() => {
   const displayStarSystems = () => {
       starSystems.map((system, i) => 
       {
-            <DataRowComponent key={}/>
+        const {name, numberOfPlanets} = system;
+        const picked = (({ a, c }) => ({ a, c }))(object);
+
+        return <DataRowComponent props={system}/>
       })
   }
   
   return (
     <div className="starSystemListContainer">
         <div className="home-title">Star Systems List</div>
-        {details.}
+        {starSystems.map((system, i) => 
+      {
+        return <DataRowComponent props={system}/>
+      })}
     </div>
   );
 };

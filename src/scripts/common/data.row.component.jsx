@@ -2,23 +2,21 @@ import React, { useEffect, Fragment, useCallback } from 'react';
 import '../../css/tables.css';
 import PropTypes from 'prop-types';
 
-const StarSystemsListComponent = props => {
-
-  const {rowData} = props;
-  
+const DataRowComponent = props => {
+ 
   return (
-    <div>
-     {rowData.map((item, i) => {
-         <span className="">{item}</span>
+    <div className="row">
+     {props.map((item, i) => {
+         return <span className="item">{item}</span>
      })}
     </div>
   );
 };
 
-StarSystemsListComponent.propTypes = {
+DataRowComponent.propTypes = {
     starSystems:PropTypes.array,
     onMount: PropTypes.func
 };
 
-StarSystemsListComponent.defaultProps = {};
-export default StarSystemsListComponent;
+DataRowComponent.defaultProps = {};
+export default DataRowComponent;
