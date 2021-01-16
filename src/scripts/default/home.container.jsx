@@ -1,6 +1,6 @@
 import HomeComponent from './home.component';
 import { connect } from 'react-redux';
-import actions from './actions';
+
 
 const mapStateToProps = state => {
 
@@ -9,9 +9,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onMount() {
-      dispatch(actions.getProductType())
-    }
+
   };
 };
 

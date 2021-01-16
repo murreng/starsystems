@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import defaultState from '../default/reducers';
+//import defaultState from '../default/reducers';
+import starSystemsState from '../star-systems/reducers';
 
 const rootReducer = combineReducers({
-  defaultState
+  starSystemsState
 });
 
 export default rootReducer;
