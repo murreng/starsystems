@@ -2,36 +2,93 @@ import { handleActions } from 'redux-actions';
 import { combineReducers } from 'redux';
 import { types } from './actions';
 
-const starSystemsState = handleActions(
+const starSystems = handleActions(
   {
-    [types.UPDATE_ITEM](state, { payload }) {
-      return {
-        ...state,
-        ...payload
-      };
-    },
-
     [types.GET_STAR_SYSTEMS](state, { payload }) {
       return {
-        ...state
+        ...state,
+        fetching: true
       };
     },
 
     [types.SET_STAR_SYSTEMS](state, { payload }) {
       return {
         ...state,
-        starSystems:payload
+        starSystems:payload._embedded.stars,
+        paging:payload.page,
+        links:payload._links,
+        fetching: false
+      };
+    },
+
+    [types.SET_CHOSEN_SYSTEM](state, { payload }) {
+      return {
+        ...state,
+        chosenSystem:state.starSystems.find(f => f._links.self.href === payload)
+      };
+    },
+  },
+  {
+    starSystems: [],
+    paging:{},
+    links:{},
+    fetching:false,
+    chosenSystem:{}
+  }
+);
+
+const starAltNames = handleActions(
+  {
+    [types.GET_STAR_ALT_NAMES](state, { payload }) {
+      return {
+        ...state,
+        fetching: true
+      };
+    },
+
+    [types.SET_STAR_ALT_NAMES](state, { payload }) {
+      return {
+        ...state,
+        starAltNames:payload._embedded.alternateNames,
+        fetching: false
       };
     },
 
   },
   {
-    starSystems: []
+    starAltNames: [],
+    fetching:false
+  }
+);
+
+const systemPlanets = handleActions(
+  {
+    [types.GET_SYSTEM_PLANETS](state, { payload }) {
+      return {
+        ...state,
+        fetching: true
+      };
+    },
+
+    [types.SET_SYSTEM_PLANETS](state, { payload }) {
+      return {
+        ...state,
+        planets:payload._embedded.planets,
+        fetching: false
+      };
+    },
+
+  },
+  {
+    planets: [],
+    fetching:false,
   }
 );
 
 const reducers = combineReducers({
-    starSystemsState
+    starSystems,
+    starAltNames,
+    systemPlanets
 });
 
 export default reducers;

@@ -1,2 +1,4 @@
-@import './Home.css';
+@import './variables.css';
+@import './home.css';
 @import './star.systems.css';
+@import './paging.css';

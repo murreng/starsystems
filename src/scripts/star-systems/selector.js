@@ -9,7 +9,39 @@ const getstarSystemsState = createSelector(
 
   const getStarSystems = createSelector(
     [getstarSystemsState],
-    stars => stars.starSystemsState.starSystems || []
+    stars => stars.starSystems.starSystems || []
   );
 
-export { getstarSystemsState,  getStarSystems};
+  const getPaging = createSelector(
+    [getstarSystemsState],
+    stars => stars.starSystems.paging || []
+  );
+
+  const getLinks = createSelector(
+    [getstarSystemsState],
+    stars => stars.starSystems.links || []
+  );
+
+  const getStarAltNames = createSelector(
+    [getstarSystemsState],
+    stars => stars.starAltNames.starAltNames || []
+  );
+
+  const getSystemPlanets = createSelector(
+    [getstarSystemsState],
+    stars => stars.systemPlanets.planets || []
+  );
+
+  const getStarSystemRowList = createSelector([getStarSystems], systems => {
+    
+    const rowData = [];
+
+    systems.map((system, i) => 
+      {
+        rowData.push((({ name, distance, numberOfPlanets,_links}) => ({rowData:{ name, distance, numberOfPlanets}, _links }))(system));
+      });
+
+    return rowData.sort((a, b) => (a.numberOfPlanets < b.numberOfPlanets) ? 1:-1);
+  });
+
+export { getStarSystemRowList, getPaging, getLinks, getStarAltNames, getSystemPlanets};

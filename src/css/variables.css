@@ -1,0 +1,52 @@
+:root {
+  /* Naming of colour taken from -  */
+  --hv-col-white: #fff; /* white */
+  --hv-col-black: #000; /* black */
+
+  --hv-col-tangaroa: #031545; /* Tangaroa - dark blue */
+  --hv-col-lochmara: #0177bd; /* Lochmara - mid blue */
+  --hv-col-lochmara-light: #007cc2; /* Lochmara - slightly lighter than above */
+  --hv-col-malibu: #7bcef4; /* Malibu - light blue */
+  --hv-col-pale-malibu: #7bcef43b; /* Malibu - light blue */
+  --hv-col-silver-chalice: #a3a3a3; /* Silver Chalice - dark grey */
+  --hv-col-alto: #d8d8d8; /* Alto - Mid grey */
+  --hv-col-mercury: #e1e1e1; /* Mercury - light grey */
+  --hv-col-seashell: #f1f1f1; /* Seashell - very light grey */
+  --hv-col-alabaster: #f7f7f7; /* Alabaster - lighter grey */
+  --hv-col-picton: #46b8ec; /* Picton Blue - inbetween light blue and mid blue */
+  --hv-col-emperor: #555; /* Emperor */
+
+  --hv-col-red: #e51652; /* Crimson - pastel red */
+  --hv-col-torch-red: #f6243f; /* Crimson - pastel red */
+  --hv-col-orange: #ed6d05; /* Chilean Fire - pastel orange */
+  --hv-col-yellow: #fab72c; /* Lightning Yellow - pastel yellow */
+  --hv-col-olivine: #8ab476; /* olivine - light green */
+  --hv-col-green: #20b099; /* Mountain Meadow - pastel green */
+  --hv-col-teal: #009090; /* Teal- dark green */
+  --hv-col-purple: #7874b5; /* Wild Blue Yonder - pastel purple */
+  --hv-col-sky-blue: #6cc7f0;
+  --hv-col-echo-blue: #b3b6c2; /* Echo Blue - grayish blue */
+  --hv-col-congress-blue: #024681; /* Congress Blue - Navy blue */
+  --hv-col-pattens-blue: #d4f3ff; /* Pattens Blue */
+  --hv-col-pacific-blue: #008bc9; /* Pacific Blue */
+  --hv-col-alice-blue: #f5fcff; /* Alice Blue */
+  --hv-col-flirt: #a90061; /* Flirt - Maroon */
+  --hv-col-curious-blue: #1a84c3; /* Curious Blue - slightly lighter than Lochmara */
+  --hv-col-tundora-grey: #4a4a4a; /* Tundora - dark grey */
+  --hv-col-tundora: #444; /* Tundora */
+  --hv-col-gallery-grey: #eee; /* Gallery - light grey */
+  --hv-col-silver: #ccc; /* Silver */
+  --hv-col-dusty-grey: #979797; /* Dusty Grey */
+  --hv-col-abbey: #57585b; /* Dark Grey */
+  --hv-col-iron: #d9dbe0; /* Iron */
+  --hv-col-foam: #e0f3fc; /* Foam */
+  --hv-col-hawkes-blue: #e0f3fc; /* Hawkes blue */
+  --hv-col-dodger-blue: #1db0ff; /* Dodger blue */
+  --hv-col-sail-blue: #a2dcf7; /* Sail blue */
+  --hv-col-boulder: #787878; /* Boulder grey */
+  --hv-col-plum: #93328e; /* Plum - purple */
+  --hv-col-heather: #bbc0ce; /* Light blue / grey */
+  --hv-col-alabaster: #f9f9f9;  /* extremely light grey */
+  --hv-col-flame: #dc6b2f; /* Flame, a sort of orange */
+  --hv-col-razzmatazz: #e0004d; /* Razzmatazz, basically a brighter flirt */
+}

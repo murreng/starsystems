@@ -3,13 +3,25 @@ import '../../css/tables.css';
 import PropTypes from 'prop-types';
 
 const DataRowComponent = props => {
+
+  const {
+    rowData,
+    links,
+    rowClicked,
+    idx
+  } = props;
  
   return (
-    <div className="row">
-     {props.map((item, i) => {
-         return <span className="item">{item}</span>
+    links? <div onClick ={() => rowClicked(links, idx)} className="row">
+    {rowData.map((item, i) => {
+      return <div className="item">{item}</div>
+    })}
+   </div> :
+     <div className="row">
+     {rowData.map((item, i) => {
+       return <div  className="item">{item}</div>
      })}
-    </div>
+    </div>  
   );
 };
 

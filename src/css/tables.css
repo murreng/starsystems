@@ -1,7 +1,24 @@
 .tables {
     .row{
+        padding: 10px 0;
+        display: flex; 
+        
+        &:first-child {
+            color:black;
+        }
+
+        &:nth-child(even) {
+          background: var(--hv-col-white);
+        }
+
+        &:nth-child(odd) {
+          background: var(--hv-col-alice-blue);
+        }
+        
         .item {
             color: red;
+            padding-left:20px;
+            width: 300px;
         }
     }
 }
