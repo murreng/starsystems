@@ -3,39 +3,42 @@ import '../../css/home.css';
 import DataRowComponent from '../common/data.row.component';
 import PropTypes from 'prop-types';
 
-const StarSystemsDetailPlanetsComponent = props => {
+const StarSystemsDetailComponent = props => {
 
   const {
-    planets
+    chosen
   } = props;
   
-if(planets < 1)
+if(chosen < 1)
 {
   return <div>Planets</div>
+}
+
+const getData =() => {
+  const items = (({ name, radius, age,temperature,mass, distance, numberOfPlanets}) => ({name, radius, age,temperature,mass, distance, numberOfPlanets}))(chosen)
+  const keyVals = [];
+  Object.keys(items).map(val => keyVals.push([val,items[val]?items[val]:'']));
+
+  return keyVals.map((pair, r)=>
+  {
+    return DataRowComponent({rowData:pair});
+  })
 }
 
   return (
     <div className="star-systems-list-container tables">
         <div className="star-systems-title">Planets</div>
-        {planets.map((item, a) =>
         {
-          const items = (({ name, radius, age,temperature,mass, discoveryMethod, description, discoveryDate, list}) => ({name, radius, age,temperature,mass, discoveryMethod, description, discoveryDate, list}))(item)
-          const keyVals = [];
-          Object.keys(items).map(val => keyVals.push([val,items[val]?items[val]:'']));
-
-          return keyVals.map((pair, r)=>
-          {
-            return DataRowComponent({rowData:pair});
-          })
-        })}
+          getData()
+        }
     </div>
   );
 };
 
-StarSystemsDetailPlanetsComponent.propTypes = {
+StarSystemsDetailComponent.propTypes = {
     starSystems:PropTypes.array,
     onMount: PropTypes.func
 };
 
-StarSystemsDetailPlanetsComponent.defaultProps = {};
-export default StarSystemsDetailPlanetsComponent;
+StarSystemsDetailComponent.defaultProps = {};
+export default StarSystemsDetailComponent;

@@ -32,6 +32,11 @@ const getstarSystemsState = createSelector(
     stars => stars.systemPlanets.planets || []
   );
 
+  const getChosenSystem = createSelector(
+    [getstarSystemsState],
+    stars => stars.starSystems.chosenSystem || []
+  );
+
   const getStarSystemRowList = createSelector([getStarSystems], systems => {
     
     const rowData = [];
@@ -44,4 +49,4 @@ const getstarSystemsState = createSelector(
     return rowData.sort((a, b) => (a.numberOfPlanets < b.numberOfPlanets) ? 1:-1);
   });
 
-export { getStarSystemRowList, getPaging, getLinks, getStarAltNames, getSystemPlanets};
+export { getStarSystemRowList, getPaging, getLinks, getStarAltNames, getSystemPlanets,getChosenSystem};
