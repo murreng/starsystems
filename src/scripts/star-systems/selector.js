@@ -27,6 +27,21 @@ const getstarSystemsState = createSelector(
     stars => stars.starAltNames.starAltNames || []
   );
 
+  const getAltPaging = createSelector(
+    [getstarSystemsState],
+    stars => stars.searchStarAltNames.paging || []
+  );
+
+  const getAltLinks = createSelector(
+    [getstarSystemsState],
+    stars => stars.searchStarAltNames.links || []
+  );
+
+  const getSearchStarAltNames = createSelector(
+    [getstarSystemsState],
+    stars => stars.searchStarAltNames.searchStarAltNames || []
+  );
+
   const getSystemPlanets = createSelector(
     [getstarSystemsState],
     stars => stars.systemPlanets.planets || []
@@ -34,8 +49,20 @@ const getstarSystemsState = createSelector(
 
   const getChosenSystem = createSelector(
     [getstarSystemsState],
-    stars => stars.starSystems.chosenSystem || []
+    stars => stars.starSystems.chosenSystem || null
   );
+
+  const getSearchStarSystemRowList = createSelector([getSearchStarAltNames], alts => {
+    
+    const rowData = [];
+
+    alts.map((alts, i) => 
+      {
+        rowData.push((({ name,_links}) => ({rowData:{ name}, _links }))(alts));
+      });
+
+    return rowData;
+  });
 
   const getStarSystemRowList = createSelector([getStarSystems], systems => {
     
@@ -49,4 +76,4 @@ const getstarSystemsState = createSelector(
     return rowData.sort((a, b) => (a.numberOfPlanets < b.numberOfPlanets) ? 1:-1);
   });
 
-export { getStarSystemRowList, getPaging, getLinks, getStarAltNames, getSystemPlanets,getChosenSystem};
+export { getStarSystemRowList, getPaging, getLinks, getStarAltNames, getSystemPlanets,getChosenSystem, getSearchStarSystemRowList, getAltPaging, getAltLinks};

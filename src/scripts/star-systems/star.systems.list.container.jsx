@@ -12,11 +12,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onMount() {
-      dispatch(actions.getStarSystems('http://webdevelopertest.playfusionservices.com/webapptest/stars?size=25&sort=numberOfPlanets,desc'))
+    onMount(url) {
+      dispatch(actions.getStarSystems(url))
     },
-    getNewPage(page) {
-      dispatch(actions.getStarSystems(page.href))
+    getStarSystems(url) {
+      dispatch(actions.getStarSystems(url))
     },
     getSystemPlanets(url) {
       dispatch(actions.getSystemPlanets(url))

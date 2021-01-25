@@ -1,24 +1,65 @@
-.tables {
-    .row{
-        padding: 10px 0;
+    .tables {
+        border: solid 1px var(--hv-col-alto);
+        padding: 5px;
+        border-radius: 5px;
+        margin-bottom:20px;
+
+
+.row {
+            padding: 10px 0;
         display: flex; 
-        
-        &:first-child {
-            color:black;
-        }
 
-        &:nth-child(even) {
-          background: var(--hv-col-white);
-        }
+    &.new-title{
+            font-weight: bold;
 
-        &:nth-child(odd) {
-          background: var(--hv-col-alice-blue);
+            ~.new-title {
+            border-top: var(--hv-col-alto) 1px solid;
+            padding-top:30px;
+            }
         }
         
         .item {
-            color: red;
             padding-left:20px;
-            width: 300px;
+            min-width: 100px;
+        }
+
+        &.spaced {
+            justify-content: space-between;
+        }
+}
+
+
+
+        .odds {
+
+
+    &.row{
+        padding: 10px 0;
+        display: flex; 
+        justify-content: space-between;
+
+        &:first-child {
+            color:black;
         }
     }
+
+
+            &:nth-child(odd) {
+                background: var(--hv-col-alice-blue);
+            }
+
+            .selected {
+          border-top: blue 1px solid;
+          border-bottom: blue 1px solid;
+        }
+
+        &:hover{
+            border-top: var(--hv-col-sail-blue) 1px solid;
+            border-bottom: var(--hv-col-sail-blue) 1px solid;
+        }
+
+        }
+
+        
+    
 }

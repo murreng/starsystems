@@ -9,15 +9,28 @@ const StarSystemsDetailComponent = props => {
     chosen
   } = props;
   
-if(chosen < 1)
+if(!chosen)
 {
-  return <div>Planets</div>
+  return null;
 }
 
 const getData =() => {
   const items = (({ name, radius, age,temperature,mass, distance, numberOfPlanets}) => ({name, radius, age,temperature,mass, distance, numberOfPlanets}))(chosen)
   const keyVals = [];
-  Object.keys(items).map(val => keyVals.push([val,items[val]?items[val]:'']));
+  Object.keys(items).map(val => {
+    switch(val)
+    {
+      case 'radius':
+        items[val] = items[val]?`${items[val]} km`:'unknown'
+        break;
+      case 'distance':
+        items[val] = items[val]?`${items[val]} light years`:'unknown'
+        break;
+    }
+
+  });
+
+  Object.keys(items).map(val => keyVals.push([val,items[val]?items[val]:'unknown']));
 
   return keyVals.map((pair, r)=>
   {
@@ -26,7 +39,7 @@ const getData =() => {
 }
 
   return (
-    <div className="star-systems-list-container tables">
+    <div className="tables">
         <div className="star-systems-title">Planets</div>
         {
           getData()

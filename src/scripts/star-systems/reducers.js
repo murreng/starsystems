@@ -30,10 +30,39 @@ const starSystems = handleActions(
   },
   {
     starSystems: [],
+    SearchStarAltNames:[],
     paging:{},
     links:{},
     fetching:false,
-    chosenSystem:{}
+    chosenSystem:null
+  }
+);
+
+const searchStarAltNames = handleActions(
+  {
+    [types.GET_SEARCH_STAR_ALT_NAMES](state, { payload }) {
+      return {
+        ...state,
+        fetching: true
+      };
+    },
+
+    [types.SET_SEARCH_STAR_ALT_NAMES](state, { payload }) {
+      return {
+        ...state,
+        searchStarAltNames:payload._embedded.alternateNames,
+        paging:payload.page,
+        links:payload._links,
+        fetching: false
+      };
+    },
+
+  },
+  {
+    searchStarAltNames: [],
+    paging:{},
+    links:{},
+    fetching:false
   }
 );
 
@@ -88,7 +117,8 @@ const systemPlanets = handleActions(
 const reducers = combineReducers({
     starSystems,
     starAltNames,
-    systemPlanets
+    systemPlanets,
+    searchStarAltNames
 });
 
 export default reducers;

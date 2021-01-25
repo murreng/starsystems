@@ -29,11 +29,31 @@ function* getSystemPlanets({payload}) {
      }
  }
 
+ function* getSearchAltNames({payload}) {
+    try{
+        const data = yield call(() => {return axios.get(payload)});
+         yield put(actions.setSearchAltNames(data.data))
+     } catch(error){
+         console.debug(error)
+     }
+ }
+
+ function* getSearchStarAltNames({payload}) {
+    try{
+        const data = yield call(() => {return axios.get(payload)});
+         yield put(actions.setSearchStarAltNames(data.data))
+     } catch(error){
+         console.debug(error)
+     }
+ }
+
 function* watchStarSystems()
 {
     yield takeEvery(types.GET_STAR_SYSTEMS, getStarSystems);
     yield takeEvery(types.GET_SYSTEM_PLANETS, getSystemPlanets);
     yield takeEvery(types.GET_STAR_ALT_NAMES, getStarAltNames);
+    yield takeEvery(types.GET_SEARCH_STAR_ALT_NAMES, getSearchStarAltNames);
+
 }
 
 function* sagas(){

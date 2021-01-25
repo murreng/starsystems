@@ -9,7 +9,7 @@
   &-item {
     padding: 10px 0;
     width: 100px;
-    border: blue 1px solid;
+    border: var(--hv-col-sail-blue) 1.5px solid;
     border-radius: 25px;
     text-align: center;
     cursor: pointer;
@@ -25,7 +25,7 @@
     }
 
       &:hover{
-        background-color:blue;
+        background-color:var(--hv-col-sail-blue);
         color: white;
       }
   }

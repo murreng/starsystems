@@ -13,11 +13,11 @@ const StarSystemsDetailAltNamesComponent = props => {
   
 if(altNames.length < 1)
 {
-  return <div>hrhhrhrhr</div>
+  return null;
 }
 
   return (
-    <div className="star-systems-list-container tables">
+    <div className="tables">
     <div className="star-systems-title">Alternative names</div>
     {altNames.map((planet, i) => 
   {

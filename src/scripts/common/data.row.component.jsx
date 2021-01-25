@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import '../../css/tables.css';
 import PropTypes from 'prop-types';
 
@@ -8,16 +8,18 @@ const DataRowComponent = props => {
     rowData,
     links,
     rowClicked,
-    idx
+    idx,
+    newTitle,
+    spaced
   } = props;
  
   return (
-    links? <div onClick ={() => rowClicked(links, idx)} className="row">
+    links? <div onClick ={() => rowClicked(links, idx)} className="row odds">
     {rowData.map((item, i) => {
       return <div className="item">{item}</div>
     })}
    </div> :
-     <div className="row">
+     <div className={`row ${newTitle?'new-title':''} ${spaced?'spaced':''}`}>
      {rowData.map((item, i) => {
        return <div  className="item">{item}</div>
      })}
