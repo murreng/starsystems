@@ -1,5 +1,4 @@
-# default-react-app
+# Star systems App
 
-React Boiler plate setup with Redux, webpack, babel.
-
-There is a default area with default Container/component, and default Selector, actions, reducers and sagas files.
+1. download dist.zip
+2. run in IIS on port 3008
