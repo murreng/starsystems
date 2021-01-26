@@ -25,11 +25,12 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      },{
-        test:/\.(gif|png|jpe?g|svg)$/i,
-        use:[
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
           {
-            loader:'file-loader'
+            loader: 'file-loader'
           }
         ]
       },
@@ -48,6 +49,6 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   devServer: {
-    port: 3007
+    port: 3008
   }
 };

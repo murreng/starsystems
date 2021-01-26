@@ -1,16 +1,12 @@
 import HomeComponent from './home.component';
 import { connect } from 'react-redux';
 
-
 const mapStateToProps = state => {
-
-  return { };
+  return {};
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-
-  };
+  return {};
 };
 
 const HomeContainer = connect(

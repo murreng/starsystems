@@ -1,16 +1,15 @@
 import StarSystemsDetailAltNamesComponent from './star.systems.detail.alt.names.component';
 import { connect } from 'react-redux';
 import actions from './actions';
-import {getStarAltNames} from './selector';
+import { getStarAltNames } from './selector';
 
 const mapStateToProps = state => {
   const altNames = getStarAltNames(state);
-  return { altNames};
+  return { altNames };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-  };
+  return {};
 };
 
 const StarSystemsDetailAltNamesContainer = connect(

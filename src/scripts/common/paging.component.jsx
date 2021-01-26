@@ -3,23 +3,26 @@ import '../../css/tables.css';
 import PropTypes from 'prop-types';
 
 const PagingComponent = props => {
+  const { firstPage, lastPage, firstClicked, lastClicked, previousClicked, nextClicked, tofit } = props;
 
-  const {
-    firstPage,
-    lastPage,
-    firstClicked,
-    lastClicked,
-    previousClicked,
-    nextClicked
-  } = props;
-
- 
   return (
     <div className="paging-container">
-      <div className={`paging-item ${firstPage? 'disabled':''}`} disabled={firstPage} onClick={() => firstClicked()}>First</div>
-      <div className={`paging-item ${firstPage? 'disabled':''}`}  disabled={firstPage} onClick={() => previousClicked()}>Previous</div>
-      <div className={`paging-item ${lastPage? 'disabled':''}`}  disabled={lastPage} onClick={() => nextClicked()}>Next</div>
-      <div className={`paging-item ${lastPage? 'disabled':''}`}  disabled={lastPage} onClick={() => lastClicked()}>Last</div>
+      <div className={`button-item ${firstPage ? 'disabled' : ''} ${tofit? 'to-fit':''}`} disabled={firstPage} onClick={() => firstClicked()}>
+        First
+      </div>
+      <div
+        className={`button-item ${firstPage ? 'disabled' : ''} ${tofit? 'to-fit':''}`}
+        disabled={firstPage}
+        onClick={() => previousClicked()}
+      >
+        Previous
+      </div>
+      <div className={`button-item ${lastPage ? 'disabled' : ''} ${tofit? 'to-fit':''}`} disabled={lastPage} onClick={() => nextClicked()}>
+        Next
+      </div>
+      <div className={`button-item ${lastPage ? 'disabled' : ''} ${tofit? 'to-fit':''}`} disabled={lastPage} onClick={() => lastClicked()}>
+        Last
+      </div>
     </div>
   );
 };

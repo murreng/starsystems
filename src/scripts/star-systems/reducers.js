@@ -11,12 +11,27 @@ const starSystems = handleActions(
       };
     },
 
+    [types.GET_STAR_DETAILS](state, { payload }) {
+      return {
+        ...state,
+        fetching: true
+      };
+    },
+
     [types.SET_STAR_SYSTEMS](state, { payload }) {
       return {
         ...state,
-        starSystems:payload._embedded.stars,
-        paging:payload.page,
-        links:payload._links,
+        starSystems: payload._embedded.stars,
+        paging: payload.page,
+        links: payload._links,
+        fetching: false
+      };
+    },
+
+    [types.SET_CHOSEN_SYSTEM_SINGLE](state, { payload }) {
+      return {
+        ...state,
+        chosenSystem: payload,
         fetching: false
       };
     },
@@ -24,17 +39,18 @@ const starSystems = handleActions(
     [types.SET_CHOSEN_SYSTEM](state, { payload }) {
       return {
         ...state,
-        chosenSystem:state.starSystems.find(f => f._links.self.href === payload)
+        chosenSystem: state.starSystems.find(f => f._links.self.href === payload)
       };
-    },
+    }
   },
   {
     starSystems: [],
-    SearchStarAltNames:[],
-    paging:{},
-    links:{},
-    fetching:false,
-    chosenSystem:null
+    SearchStarAltNames: [],
+    paging: {},
+    links: {},
+    fetching: false,
+    chosenSystem: null,
+    altSearchStar: null
   }
 );
 
@@ -50,19 +66,18 @@ const searchStarAltNames = handleActions(
     [types.SET_SEARCH_STAR_ALT_NAMES](state, { payload }) {
       return {
         ...state,
-        searchStarAltNames:payload._embedded.alternateNames,
-        paging:payload.page,
-        links:payload._links,
+        searchStarAltNames: payload._embedded.alternateNames,
+        paging: payload.page,
+        links: payload._links,
         fetching: false
       };
-    },
-
+    }
   },
   {
     searchStarAltNames: [],
-    paging:{},
-    links:{},
-    fetching:false
+    paging: {},
+    links: {},
+    fetching: false
   }
 );
 
@@ -78,15 +93,14 @@ const starAltNames = handleActions(
     [types.SET_STAR_ALT_NAMES](state, { payload }) {
       return {
         ...state,
-        starAltNames:payload._embedded.alternateNames,
+        starAltNames: payload._embedded.alternateNames,
         fetching: false
       };
-    },
-
+    }
   },
   {
     starAltNames: [],
-    fetching:false
+    fetching: false
   }
 );
 
@@ -102,23 +116,22 @@ const systemPlanets = handleActions(
     [types.SET_SYSTEM_PLANETS](state, { payload }) {
       return {
         ...state,
-        planets:payload._embedded.planets,
+        planets: payload._embedded.planets,
         fetching: false
       };
-    },
-
+    }
   },
   {
     planets: [],
-    fetching:false,
+    fetching: false
   }
 );
 
 const reducers = combineReducers({
-    starSystems,
-    starAltNames,
-    systemPlanets,
-    searchStarAltNames
+  starSystems,
+  starAltNames,
+  systemPlanets,
+  searchStarAltNames
 });
 
 export default reducers;

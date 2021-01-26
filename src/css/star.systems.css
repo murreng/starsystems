@@ -13,41 +13,67 @@
 
     .filter-container {
       display: flex;
-      justify-content: space-between;
-      width: 400px;
+      flex-direction: column;
       margin: 20px 0;
+      align-items: center;
     
 
       .num-input {
-        
-      width: 50px;
-      padding: 5px;
-      border-radius: 5px;
-      }
-
-      button {
-        color:blue;
+        margin-top:10px;
+        width: 50px;
+        padding: 5px;
+        border-radius: 5px;
       }
     }
 
     .search-container {
       display: flex;
-      justify-content: space-between;
-      width: 400px;
+      flex-direction: column;
       margin: 20px 0;
+      align-items: center;
     
-
-      .num-input {
-        
-      width: 50px;
-      padding: 5px;
-      border-radius: 5px;
-      }
-
-      button {
-        color:blue;
+      .box-input {     
+        min-width: 300px;
+        padding: 5px;
+        border-radius: 5px;
+        margin-top:10px;
+        margin-left: 10px;
+        margin-right: 10px;
       }
     }
+
+    .button-item {
+    padding: 10px 0;
+    width: 100px;
+    border: var(--hv-col-sail-blue) 1.5px solid;
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+
+    &.to-fit{
+      width: auto;
+      padding: 10px;
+    }
+
+    &.top {
+      margin-top:10px;
+    }
+
+    &.disabled{
+      cursor: default;
+      opacity:.5;
+
+      &:hover{
+        background-color:white;
+        color: black;
+      }
+    }
+
+      &:hover{
+        background-color:var(--hv-col-sail-blue);
+        color: white;
+      }
+  }
   }
 
    &-title {
@@ -58,7 +84,16 @@
     }
 
   &-list-container {
-    flex-basis: 50%;
+    flex-basis: 40%;
+    padding: 0 10px;
+
+    .page-number {
+      margin: 20px 0;
+    }
+  }
+
+  &-options-list-container {
+    flex-basis: 20%;
     padding: 0 10px;
 
     .page-number {

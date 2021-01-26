@@ -3,10 +3,7 @@ import { combineReducers } from 'redux';
 import { types } from './actions';
 
 const stuff = handleActions(
-  {
-  
-
-  },
+  {},
   {
     starSysttttems: []
   }

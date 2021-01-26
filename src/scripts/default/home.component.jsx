@@ -11,12 +11,12 @@ const HomeComponent = props => {
     <div>
       <div className="home-title">Star systems app</div>
       <div className="star-systems-container">
-        <StarSystemsListContainer/>
-        <StarSystemsSearchContainer/>
+        <StarSystemsListContainer />
+        <StarSystemsSearchContainer />
         <div className="star-systems-detail-container">
-          <StarSystemsDetailContainer/> 
-          <StarSystemsDetailAltNamesContainer/>
-          <StarSystemsDetailPlanetsContainer/>
+          <StarSystemsDetailContainer />
+          <StarSystemsDetailAltNamesContainer />
+          <StarSystemsDetailPlanetsContainer />
         </div>
       </div>
     </div>

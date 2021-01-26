@@ -1,17 +1,15 @@
 import StarSystemsDetailPlanetsComponent from './star.systems.detail.planets.component';
 import { connect } from 'react-redux';
 import actions from './actions';
-import { getSystemPlanets} from './selector';
+import { getSystemPlanets } from './selector';
 
 const mapStateToProps = state => {
   const planets = getSystemPlanets(state);
-  return { planets};
+  return { planets };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
-
-  };
+  return {};
 };
 
 const StarSystemsDetailPlanetsContainer = connect(
